@@ -21,13 +21,13 @@ public interface DifferentiableTrajectory3dOfReferenceFrame
     // PUBLIC DEFAULT METHODS
     ////////////////////////////////////////////////////////////////
     
-    public default void toReferenceFrameNonInertial( MovingFrame rf )
+    public default void toReferenceFrameNonInertial( MovingFrame movingFrame )
     {
-        rf.setOrientationFromThisToReferenceFrame( this.orientation() );
-        rf.setAngularVelocity( this.angularVelocity() );
-        rf.setPositionFromReferenceFrame( this.position() );
-        rf.setVelocityFromReferenceFrame( this.velocity() );
-        rf.setAcceleration( this.orientation().rotateWithInverse( this.acceleration() ) );
+    	movingFrame.setOrientationFromThisToReferenceFrame( this.orientation() );
+    	movingFrame.setAngularVelocity( this.angularVelocity() );
+    	movingFrame.setPositionFromReferenceFrame( this.position() );
+    	movingFrame.setVelocityFromReferenceFrame( this.velocity() );
+    	movingFrame.setAcceleration( this.orientation().rotateWithInverse( this.acceleration() ) );
     }
     
     
