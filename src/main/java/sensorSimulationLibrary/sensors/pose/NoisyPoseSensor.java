@@ -8,8 +8,8 @@ import numericalLibrary.manifolds.unitQuaternions.atlases.UnitQuaternionDifferen
 import numericalLibrary.types.UnitQuaternion;
 import numericalLibrary.types.Vector3;
 import sensorSimulationLibrary.trajectories3d.ContinuousTrajectory3dOfReferenceFrame;
+import sensorSimulationLibrary.util.Pose;
 import sensorSimulationLibrary.util.SeedManagerForRandomNumberGenerator;
-import util.Pose;
 
 
 
