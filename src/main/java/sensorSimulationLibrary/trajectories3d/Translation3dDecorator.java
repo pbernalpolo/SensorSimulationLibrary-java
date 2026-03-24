@@ -22,6 +22,7 @@ public class Translation3dDecorator
     public Translation3dDecorator( DifferentiableTrajectory3dOfPoint theDifferentiableTrajectoryOfPoint )
     {
         this.dtp = theDifferentiableTrajectoryOfPoint;
+        this.displacement = Vector3.zero();
     }
     
     
@@ -30,9 +31,9 @@ public class Translation3dDecorator
     // PUBLIC METHODS
     ////////////////////////////////////////////////////////////////
     
-    public Translation3dDecorator setDisplacement( Vector3 theDisplacement )
+    public Translation3dDecorator setDisplacement( Vector3 displacement )
     {
-        this.displacement = theDisplacement;
+        this.displacement.setTo( displacement );
         return this;
     }
     
