@@ -1,7 +1,7 @@
 package sensorSimulationLibrary.sensors.triaxials;
 
 
-import kalmanFilterLibrary.gravityModels.GravityModel;
+import geophysicalModelLibrary.gravity.GravityModel;
 import numericalLibrary.types.UnitQuaternion;
 import numericalLibrary.types.Vector3;
 import sensorSimulationLibrary.sensors.SimulatedSensorWithVector3Output;
@@ -118,7 +118,7 @@ public class IdealAccelerometer
         Vector3 accCentripetal = omgNIN.crossProduct( omgNIN.crossProduct( this.rNNS ) );
         // accSIS = R( qSN ) [ R( qNO ) ( accOON - gOS ) + omgNIN x ( omgNIN x rNNS ) ]  (angular acceleration is currently neglected)
         return this.qNS.rotateWithInverse(
-        		qON.rotateWithInverse( accNIN.subtract( this.gravityModel.acceleration() ) )
+        		qON.rotateWithInverse( accNIN.subtract( this.gravityModel.getGravityVector() ) )
         		.addInplace( accCentripetal ) );
     }
     
